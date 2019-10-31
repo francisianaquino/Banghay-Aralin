@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import FileDirectory from './components/FileDirectory';
+import DocumentViewer from './components/DocumentViewer';
+import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import Header from './components/Header';
+import './css/index.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <MDBContainer>
+          <MDBRow>
+            
+            <MDBCol md="4" className="border">
+              
+                <FileDirectory />
+              
+            </MDBCol>
+            <MDBCol md="8">
+            
+              <DocumentViewer />
+            
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </div>
+    );
+  }
 }
-
-export default App;
